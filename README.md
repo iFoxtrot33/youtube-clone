@@ -24,5 +24,6 @@ This a youtube clone
 - React-Router
 - Axios
 - Material UI
+- Rapid API
 - Jest
-- ESlint/ Prittier
+- ESlint/ Prettier
