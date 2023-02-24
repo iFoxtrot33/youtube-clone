@@ -8,7 +8,7 @@ This a youtube clone
 
 ## 💻To deploy localy:
 ```
-1)git clone https://github.com/iFoxtrot33/calculator-test.git
+1)git clone https://github.com/iFoxtrot33/youtube-clone.git
 2)cd calculator-test
 3)npm ci
 4)npm start
