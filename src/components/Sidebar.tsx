@@ -2,10 +2,17 @@ import React from "react";
 import { Stack } from "@mui/material";
 
 import { categories } from "../utils/constants";
+import { JSXClosingFragment } from "@babel/types";
 
-const selectedCategory = "New";
+type category = {
+  selectedCategory: string;
+  setSelectedCategory: React.Dispatch<React.SetStateAction<string>>;
+};
 
-const Sidebar: React.FC = () => (
+const Sidebar: React.FC<category> = ({
+  selectedCategory,
+  setSelectedCategory,
+}) => (
   <Stack
     direction="row"
     sx={{
@@ -17,6 +24,7 @@ const Sidebar: React.FC = () => (
     {categories.map((category) => (
       <button
         className="category-btn"
+        onClick={() => setSelectedCategory(category.name)}
         style={{
           background: (category.name === selectedCategory && "red") || "",
           color: "white",
