@@ -31,4 +31,7 @@ export type VideoType = {
     liveBroadcastContent: string;
     publishTime: string;
   };
+  statistics?: {
+    subscriberCount?: string;
+  };
 };
