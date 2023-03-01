@@ -33,5 +33,7 @@ export type VideoType = {
   };
   statistics?: {
     subscriberCount?: string;
+    viewCount?: string;
+    likeCount?: string;
   };
 };

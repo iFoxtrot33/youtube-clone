@@ -6,13 +6,15 @@ import { Sidebar, Videos } from "./";
 
 import { VideoType } from "../utils/types";
 
-type VideosArrayType = VideoType[] | [];
+type VideosArrayType = VideoType[] | null;
 
 const Feed: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = React.useState<string>("New");
-  const [videos, setVideos] = React.useState<VideosArrayType>([]);
+  const [videos, setVideos] = React.useState<VideosArrayType>(null);
 
   React.useEffect(() => {
+    setVideos(null);
+
     fetchFromApi(`search?part=snippet&q=${selectedCategory}`).then((data) =>
       setVideos(data.items)
     );
@@ -50,7 +52,7 @@ const Feed: React.FC = () => {
         >
           {selectedCategory} <span style={{ color: "#F31503" }}>videos</span>
         </Typography>
-        <Videos videos={videos} />
+        <Videos videos={videos || []} />
       </Box>
     </Stack>
   );
