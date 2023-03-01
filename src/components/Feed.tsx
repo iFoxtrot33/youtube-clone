@@ -4,11 +4,18 @@ import { Box, Stack, Typography } from "@mui/material";
 import { fetchFromApi } from "../utils/fetchFromApi";
 import { Sidebar, Videos } from "./";
 
+import { VideoType } from "../utils/types";
+
+type VideosArrayType = VideoType[] | [];
+
 const Feed: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = React.useState<string>("New");
+  const [videos, setVideos] = React.useState<VideosArrayType>([]);
 
   React.useEffect(() => {
-    fetchFromApi(`search?part=snippet&q=${selectedCategory}`);
+    fetchFromApi(`search?part=snippet&q=${selectedCategory}`).then((data) =>
+      setVideos(data.items)
+    );
   }, [selectedCategory]);
 
   return (
@@ -43,7 +50,7 @@ const Feed: React.FC = () => {
         >
           {selectedCategory} <span style={{ color: "#F31503" }}>videos</span>
         </Typography>
-        <Videos />
+        <Videos videos={videos} />
       </Box>
     </Stack>
   );

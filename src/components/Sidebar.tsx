@@ -2,7 +2,6 @@ import React from "react";
 import { Stack } from "@mui/material";
 
 import { categories } from "../utils/constants";
-import { JSXClosingFragment } from "@babel/types";
 
 type category = {
   selectedCategory: string;
