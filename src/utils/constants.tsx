@@ -11,7 +11,7 @@ import TheaterComedyIcon from "@mui/icons-material/TheaterComedy";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 import DeveloperModeIcon from "@mui/icons-material/DeveloperMode";
 
-export const logo = "https://ibb.co/74p4mQX";
+export const logo = "https://i.ibb.co/m8y8W0G/owl.png";
 
 type categories = {
   name: string;

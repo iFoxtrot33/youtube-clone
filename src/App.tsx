@@ -9,7 +9,6 @@ import {
   ChannelDetail,
   SearchFeed,
 } from "./components";
-import "./App.scss";
 
 const App: React.FC = () => (
   <BrowserRouter>
