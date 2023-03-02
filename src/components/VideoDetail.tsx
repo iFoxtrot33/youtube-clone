@@ -1,19 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import ReactPlayer from "react-player";
 import { Typography, Box, Stack } from "@mui/material";
-import { CheckCircle } from "@mui/icons-material";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
-import { Videos } from "./";
+import { Videos } from ".";
 import { fetchFromApi } from "../utils/fetchFromApi";
 import { VideoType } from "../utils/types";
 
 const VideoDetail: React.FC = () => {
-  const [videoDetail, setVideoDetail] = React.useState<VideoType | null>(null);
-  const [videos, setVideos] = React.useState<VideoType[]>([]);
+  const [videoDetail, setVideoDetail] = useState<VideoType | null>(null);
+  const [videos, setVideos] = useState<VideoType[]>([]);
   const { id } = useParams();
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetchFromApi(`videos?part=snippet,statistics&id=${id}`).then((data) =>
       setVideoDetail(data.items[0])
     );
@@ -23,17 +23,14 @@ const VideoDetail: React.FC = () => {
     );
   }, [id]);
 
-  if (!videoDetail?.snippet) {
-    return <Typography>"Loading..."</Typography>;
-  }
+  if (!videoDetail?.snippet) return <Typography>Loading</Typography>;
 
   const {
     snippet: { title, channelId, channelTitle },
-    statistics,
   } = videoDetail;
 
-  const viewCount = statistics?.viewCount;
-  const likeCount = statistics?.likeCount;
+  const viewCount = videoDetail?.statistics?.viewCount;
+  const likeCount = videoDetail?.statistics?.likeCount;
 
   return (
     <Box minHeight="95vh">
@@ -56,24 +53,19 @@ const VideoDetail: React.FC = () => {
               px={2}
             >
               <Link to={`/channel/${channelId}`}>
-                <Typography
-                  sx={{
-                    fontSize: { sm: "subtitle1", md: "h6" },
-                    color: "#fff",
-                  }}
-                >
+                <Typography fontSize={{ sm: "16px", md: "24px" }} color="#fff">
                   {channelTitle}
-                  <CheckCircle
+                  <CheckCircleIcon
                     sx={{ fontSize: "12px", color: "gray", ml: "5px" }}
                   />
                 </Typography>
               </Link>
               <Stack direction="row" gap="20px" alignItems="center">
                 <Typography variant="body1" sx={{ opacity: 0.7 }}>
-                  {viewCount && parseInt(viewCount).toLocaleString()} views
+                  {parseInt(viewCount ? viewCount : "0").toLocaleString()} views
                 </Typography>
                 <Typography variant="body1" sx={{ opacity: 0.7 }}>
-                  {likeCount && parseInt(likeCount).toLocaleString()} likes
+                  {parseInt(likeCount ? likeCount : "0").toLocaleString()} likes
                 </Typography>
               </Stack>
             </Stack>

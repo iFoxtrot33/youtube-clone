@@ -32,10 +32,8 @@ const VideoCard: React.FC<VideoCardProps> = ({
     >
       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
         <CardMedia
-          component="img"
-          image={snippet?.thumbnails?.high?.url}
-          alt={snippet?.title || "video"}
-          sx={{ width: 358, height: 180 }}
+          image={snippet?.thumbnails?.high?.url || demoThumbnailUrl}
+          sx={{ width: { xs: "100%", sm: "358px" }, height: 180 }}
         />
       </Link>
       <CardContent sx={{ backgroundColor: "#1e1e1e", height: "106px" }}>
