@@ -4,12 +4,12 @@
 This a youtube clone 
 
 ## 🌐Demo:
-(to be deployed lately)
+https://owltube.vercel.app/
 
 ## 💻To deploy localy:
 ```
 1)git clone https://github.com/iFoxtrot33/youtube-clone.git
-2)cd calculator-test
+2)cd youtube-clone
 3)npm ci
 4)npm start
 ```
