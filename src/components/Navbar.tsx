@@ -15,6 +15,10 @@ const Navbar: React.FC = () => (
       background: "#000",
       top: 0,
       justifyContent: "space-between",
+      "@media (max-width: 490px)": {
+        display: "flex",
+        flexDirection: "column",
+      },
     }}
   >
     <Link to="/" style={{ display: "flex", alignItems: "center" }}>
