@@ -10,8 +10,8 @@ https://owltube.vercel.app/
 ```
 1)git clone https://github.com/iFoxtrot33/youtube-clone.git
 2)cd youtube-clone
-3)npm ci
-4)npm start
+3)make install
+4)make start
 ```
 ## 🎛️Tests:
 <a href="https://codeclimate.com/github/iFoxtrot33/youtube-clone/maintainability"><img src="https://api.codeclimate.com/v1/badges/de7d52e96635d618db1d/maintainability" /></a>
