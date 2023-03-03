@@ -10,7 +10,7 @@ const ChannelDetail: React.FC = () => {
   const [channelDetail, setChannelDetail] = React.useState<VideoType | null>(
     null
   );
-  const [videos, setVideos] = React.useState<any>([]);
+  const [videos, setVideos] = React.useState<VideoType[]>([]);
 
   const { id } = useParams();
 

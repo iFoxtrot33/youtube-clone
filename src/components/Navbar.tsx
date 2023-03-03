@@ -4,7 +4,6 @@ import { Stack, Typography } from "@mui/material";
 
 import { logo } from "../utils/constants";
 import SearchBar from "./SearchBar";
-import { fontWeight } from "@mui/system";
 
 const Navbar: React.FC = () => (
   <Stack

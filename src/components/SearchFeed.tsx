@@ -3,7 +3,7 @@ import { Box, Typography } from "@mui/material";
 import { useParams } from "react-router-dom";
 
 import { fetchFromApi } from "../utils/fetchFromApi";
-import { Sidebar, Videos } from "./";
+import { Videos } from "./";
 
 import { VideoType } from "../utils/types";
 
