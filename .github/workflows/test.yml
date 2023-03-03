@@ -29,7 +29,7 @@ jobs:
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v3.0.0
         env:
-          CC_TEST_REPORTER_ID: 58ef2b14a6db967338529c28146d06482965eb6c13f4bb4fc5d9c40c81061988
+          CC_TEST_REPORTER_ID: ${{ secrets.YOUTUBE_CLONE_CODECLIMATE_ID }}
         with:
           coverageCommand: npm test -- --coverage
           debug: true
