@@ -15,9 +15,8 @@ https://owltube.vercel.app/
 ```
 ## 🎛️Tests:
 <a href="https://codeclimate.com/github/iFoxtrot33/youtube-clone/maintainability"><img src="https://api.codeclimate.com/v1/badges/de7d52e96635d618db1d/maintainability" /></a>
-<a href="https://codeclimate.com/github/iFoxtrot33/youtube-clone/test_coverage"><img src="https://api.codeclimate.com/v1/badges/de7d52e96635d618db1d/test_coverage" /></a>
 ![Linter workflow](https://github.com/iFoxtrot33/youtube-clone/actions/workflows/lint.yml/badge.svg)
-![Tests workflow](https://github.com/iFoxtrot33/youtube-clone/actions/workflows/test.yml/badge.svg)
+
 
 ## 🛠Stack:
 - ReactJS 18
